@@ -1,12 +1,18 @@
 package otus.java_basic.hw2;
 
+
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr01 = new int[8];
-        fillArrRandom(arr01, 7);
-        int[] arr02 = new int[7];
+        int r = 10; // размер массивов, лучше вводить c консоли, но в данном случае захардкодил
+        int[] arr01 = new int[r];
+        fillArrRandom(arr01, r);
+        for (int n : arr01) {
+            System.out.print(n);
+        }
+        System.out.println(" ");
+        int[] arr02 = new int[r];
         printStr("Hello world", 5);
         printSumArray(arr01);
         fillArr(arr02, 6);
@@ -23,7 +29,7 @@ public class Main {
     }
     static void fillArrRandom (int[] arr, int n) {
         Random random = new Random();
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = random.nextInt(n);
         }
     }
