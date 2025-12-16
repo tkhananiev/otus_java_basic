@@ -1,8 +1,11 @@
 package otus.java_basic.hw2;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        int[] arr01 = {3, 7, 9, 8, 5, 1};
+        int[] arr01 = new int[8];
+        fillArrRandom(arr01);
         int[] arr02 = new int[7];
         printStr("Hello world", 5);
         printSumArray(arr01);
@@ -17,6 +20,12 @@ public class Main {
         }
         System.out.println();
         sumHalfArr(arr01);
+    }
+    static void fillArrRandom (int[] arr) {
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(8);
+        }
     }
 
     static void printStr(String str, int n) {
