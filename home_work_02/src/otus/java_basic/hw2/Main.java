@@ -5,7 +5,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         int[] arr01 = new int[8];
-        fillArrRandom(arr01);
+        fillArrRandom(arr01, 7);
         int[] arr02 = new int[7];
         printStr("Hello world", 5);
         printSumArray(arr01);
@@ -21,10 +21,10 @@ public class Main {
         System.out.println();
         sumHalfArr(arr01);
     }
-    static void fillArrRandom (int[] arr) {
+    static void fillArrRandom (int[] arr, int n) {
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(8);
+            arr[i] = random.nextInt(n);
         }
     }
 
