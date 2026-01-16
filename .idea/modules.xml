@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/home_work_02/home_work_02.iml" filepath="$PROJECT_DIR$/home_work_02/home_work_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/home_work_03/home_work_03.iml" filepath="$PROJECT_DIR$/home_work_03/home_work_03.iml" />
       <module fileurl="file://$PROJECT_DIR$/otus_java_basic.iml" filepath="$PROJECT_DIR$/otus_java_basic.iml" />
     </modules>
   </component>
