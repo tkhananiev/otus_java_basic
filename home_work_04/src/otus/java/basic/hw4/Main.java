@@ -23,11 +23,14 @@ public class Main {
 
         }
 
-        Box box = new Box(20, 20, "black");
+        Box box = new Box(20, 15, "black");
+        box.opeBox();
         box.putItem();
         box.extractItem();
 
+        System.out.println("------------");
 
+        box.info();
 
     }
 }

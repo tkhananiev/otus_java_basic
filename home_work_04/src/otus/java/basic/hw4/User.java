@@ -6,7 +6,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String patronymic;
-    public int yearOfBirth;
+    private int yearOfBirth;
     private  String email;
 
     public User(String firstName, String lastName, String patronymic, int yearOfBirth, String email) {
