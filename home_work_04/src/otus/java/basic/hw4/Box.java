@@ -7,8 +7,8 @@ public class Box {
     private boolean isEmpty = true;
     private boolean isClosed = true;
 
-    public Box(int weight, int height, String color) {
-        this.width = weight;
+    public Box(int width, int height, String color) {
+        this.width = width;
         this.height = height;
         this.color = color;
     }
