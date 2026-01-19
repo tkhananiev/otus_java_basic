@@ -24,7 +24,7 @@ public class Main {
         }
 
         Box box = new Box(20, 15, "black");
-        box.opeBox();
+        box.openBox();
         box.putItem();
         box.extractItem();
 

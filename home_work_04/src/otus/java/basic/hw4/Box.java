@@ -31,9 +31,11 @@ public class Box {
 
     public void closeBox(){
         isClosed = true;
+        System.out.println("Коробка закрыта");
     }
-    public void opeBox(){
+    public void openBox(){
         isClosed = false;
+        System.out.println("Коробка открыта");
     }
 
     public void setColor(String color) {
