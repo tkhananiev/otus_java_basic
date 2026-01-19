@@ -69,7 +69,22 @@ public class Box {
         System.out.println("Высота: " + height);
         System.out.println("Ширина: " + width);
         System.out.println("Цвет: " + color);
-        System.out.println("Пустая ли сейчас? : " + isEmpty);
-        System.out.println("Открыта ли? : " + !isClosed);
+        switch (isEmpty){
+            case true:
+                System.out.println("Коробка пустая");
+                break;
+            case  false:
+                System.out.println("Коробка заполнена");
+                break;
+
+        }
+        switch (isClosed){
+            case true:
+                System.out.println("Коробка закрыта");
+                break;
+            case  false:
+                System.out.println("Коробка открыта");
+                break;
+        }
     }
 }
