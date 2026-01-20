@@ -23,7 +23,7 @@ public class Main {
 
         }
 
-        Box box = new Box(20, 15, "black");
+        Box box = new Box(20, "black");
         box.openBox();
         box.putItem();
         box.extractItem();

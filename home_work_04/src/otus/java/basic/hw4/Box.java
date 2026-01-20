@@ -1,24 +1,18 @@
 package otus.java.basic.hw4;
 
 public class Box {
-    private int width;
-    private int height;
+    private int size;
     private String color;
     private boolean isEmpty = true;
     private boolean isClosed = true;
 
-    public Box(int width, int height, String color) {
-        this.width = width;
-        this.height = height;
+    public Box(int size, String color) {
+        this.size = size;
         this.color = color;
     }
 
-    public int getWeight() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+    public int getSize() {
+        return size;
     }
 
     public String getColor() {
@@ -66,8 +60,7 @@ public class Box {
     }
 
     public void info() {
-        System.out.println("Высота: " + height);
-        System.out.println("Ширина: " + width);
+        System.out.println("Размер: " + size);
         System.out.println("Цвет: " + color);
         switch (isEmpty){
             case true:
