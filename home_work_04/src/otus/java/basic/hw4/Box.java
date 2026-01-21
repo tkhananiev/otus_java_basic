@@ -76,7 +76,7 @@ public class Box {
         }
         switch (isClosed){
             case true:
-                System.out.println("Коробка закрыта");
+                System.out.println("Коробка закрыта.");
                 break;
             case  false:
                 System.out.println("Коробка открыта");
