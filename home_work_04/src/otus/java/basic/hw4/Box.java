@@ -23,11 +23,11 @@ public class Box {
         return this.isEmpty;
     }
 
-    public void closeBox(){
+    public void close(){
         isClosed = true;
         System.out.println("Коробка закрыта");
     }
-    public void openBox(){
+    public void open(){
         isClosed = false;
         System.out.println("Коробка открыта");
     }
@@ -37,26 +37,29 @@ public class Box {
     }
 
     public void putItem() {
-        if (this.isClosed){
+        if (this.isClosed) {
             System.out.println("Коробка закрыта, чтобы положить чего-либо в коробку откройте ее.");
             return;
         }
-        if (this.isEmpty) {
-            System.out.println("Поместили предмет в коробку");
-            this.isEmpty = false;
+        if (!this.isEmpty) {
+            System.out.println("Коробка не пустая ");
+            return;
         }
-        else System.out.println("Коробка не пустая ");
+        System.out.println("Поместили предмет в коробку");
+        this.isEmpty = false;
     }
+
     public void extractItem() {
         if (this.isClosed){
             System.out.println("Коробка закрыта, для извлечения чего-либо из коробки откройте ее.");
             return;
         }
-        if (!this.isEmpty) {
-            this.isEmpty = true;
-            System.out.println("Извлекли предмет из коробки");
+        if (this.isEmpty) {
+            System.out.println("Коробка пустая ");
+            return;
         }
-        else System.out.println("Коробка пустая ");
+        System.out.println("Извлекли предмет из коробки");
+        this.isEmpty = true;
     }
 
     public void info() {
