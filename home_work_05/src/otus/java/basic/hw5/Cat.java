@@ -1,12 +1,12 @@
 package otus.java.basic.hw5;
 
 public class Cat extends Animal {
-    public Cat(String name, int runSpeed, int swimSpeed, int endurance) {
-        super(name, runSpeed, swimSpeed, endurance);
+    public Cat(String name, int runSpeed, int endurance) {
+        super(name, runSpeed, 0, endurance);
     }
     @Override
-    protected double swim(int distance) {
+    public double swim(int distance) {
         System.out.println(getName() + " плавать не умеет.");
-        return 0;
+        return -1;
     }
 }

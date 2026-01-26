@@ -5,7 +5,7 @@ public class Horse extends Animal {
         super(name, runSpeed, swimSpeed, endurance);
     }
     @Override
-    protected  int swimRatePerM() {
+    public int swimRatePerM() {
         return 4;
     }
 }

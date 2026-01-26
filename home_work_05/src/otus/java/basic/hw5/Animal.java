@@ -14,15 +14,16 @@ public abstract class Animal {
         this.endurance = endurance;
     }
 
-    protected int runRatetPerM() {
+    protected int runRatePerM() {
         return 1;
     }
+
     protected int swimRatePerM() {
         return 1;
     }
 
-    protected double run(int distance){
-        int rate = distance * runRatetPerM();
+    public double run(int distance){
+        int rate = distance * runRatePerM();
         double time = (double) distance / runSpeed;
         if (endurance < rate){
             tired = true;
@@ -30,10 +31,11 @@ public abstract class Animal {
             return -1;
         }
         endurance -= rate;
+        System.out.println(name + " пробежал " + distance + " метров за " + time  );
         return time;
 
     }
-    protected double swim(int distance){
+    public double swim(int distance){
         int rate = distance * swimRatePerM();
         double time = (double) distance / swimSpeed;
         if (endurance < rate){
@@ -42,6 +44,7 @@ public abstract class Animal {
             return -1;
         }
         endurance -= rate;
+        System.out.println(name + " проплыл " + distance + " метров ");
         return time;
     }
 
