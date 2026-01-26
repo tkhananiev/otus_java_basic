@@ -4,8 +4,8 @@ public abstract class Animal {
     private String name;
     private int runSpeed;
     private int swimSpeed;
-    protected int endurance;
-    protected boolean tired;
+    private int endurance;
+    private boolean tired;
 
     protected Animal(String name, int runSpeed, int swimSpeed, int endurance) {
         this.name = name;
@@ -53,4 +53,23 @@ public abstract class Animal {
                 "\nУсталость: " + this.tired);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getRunSpeed() {
+        return runSpeed;
+    }
+
+    public int getSwimSpeed() {
+        return swimSpeed;
+    }
+
+    public int getEndurance() {
+        return endurance;
+    }
+
+    public boolean isTired() {
+        return tired;
+    }
 }
