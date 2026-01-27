@@ -15,6 +15,5 @@ public class Main {
             animal.info();
             System.out.println();
         }
-
     }
 }
