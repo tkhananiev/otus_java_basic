@@ -11,6 +11,7 @@ public class JavaFundamentals01 {
         a = (int)(Math.random() * 10);
         b = (int)(Math.random() * 10);
         c = (int)(Math.random() * 10);
+        boolean increment = Math.random() > 0.5;
 
             switch (choice) {
                 case "1":
@@ -26,7 +27,7 @@ public class JavaFundamentals01 {
                     compareNumbers();
                     break;
                 case "5":
-                    addOrSubtractAndPrint(a, b, true);
+                    addOrSubtractAndPrint(a, b, increment);
                     break;
                 default:
                     System.out.println("Нужно ввести число от 1 до 5");
