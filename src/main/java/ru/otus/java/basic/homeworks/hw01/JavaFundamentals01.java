@@ -11,7 +11,7 @@ public class JavaFundamentals01 {
         a = (int)(Math.random() * 10);
         b = (int)(Math.random() * 10);
         c = (int)(Math.random() * 10);
-        while (sc.hasNextLine()) {
+
             switch (choice) {
                 case "1":
                     greetings();
@@ -24,14 +24,13 @@ public class JavaFundamentals01 {
                     break;
                 case "4":
                     compareNumbers();
+                    break;
                 case "5":
-                    addOrSubtractAndPrint(7, 3, true);
-                case "exit":
-                    return;
+                    addOrSubtractAndPrint(a, b, true);
+                    break;
                 default:
-                    System.exit(0);
+                    System.out.println("Нужно ввести число от 1 до 5");
             }
-        }
     }
 
     public static void greetings(){
