@@ -6,32 +6,24 @@ public class JavaFundamentals01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число от 1 до 5 ");
-        String choice = sc.nextLine();
+        int choice = sc.nextInt();
         int a, b, c;
         a = (int)(Math.random() * 10);
         b = (int)(Math.random() * 10);
         c = (int)(Math.random() * 10);
         boolean increment = Math.random() > 0.5;
 
+        if (choice >= 1 && choice <= 5) {
             switch (choice) {
-                case "1":
-                    greetings();
-                    break;
-                case "2":
-                    checkSign(a, b, c);
-                    break;
-                case "3":
-                    selectColor();
-                    break;
-                case "4":
-                    compareNumbers();
-                    break;
-                case "5":
-                    addOrSubtractAndPrint(a, b, increment);
-                    break;
-                default:
-                    System.out.println("Нужно ввести число от 1 до 5");
+                case 1 -> greetings();
+                case 2 -> checkSign(a, b, c);
+                case 3 -> selectColor();
+                case 4 -> compareNumbers();
+                case 5 ->  addOrSubtractAndPrint(a, b, increment);
             }
+        }
+        else System.out.println("Введите число от 1 до 5");
+        sc.close();
     }
 
     public static void greetings(){
