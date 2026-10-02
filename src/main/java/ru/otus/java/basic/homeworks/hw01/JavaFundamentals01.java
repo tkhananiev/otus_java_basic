@@ -1,17 +1,25 @@
 package ru.otus.java.basic.homeworks.hw01;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class JavaFundamentals01 {
     public static void main(String[] args) {
+
+        greetings();
+        checkSign(6, 7, 8);
+        selectColor();
+        compareNumbers();
+        addOrSubtractAndPrint(7, 7, false);
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число от 1 до 5 ");
         String choice;
         String regex = "[1-5]";
         int a, b, c;
-        a = (int)(Math.random() * 10);
-        b = (int)(Math.random() * 10);
-        c = (int)(Math.random() * 10);
+        a = new Random().nextInt(-10, 11);
+        b = new Random().nextInt(-10, 11);
+        c = new Random().nextInt(-10, 11);
         boolean increment = Math.random() > 0.5;
 
         while (true) {
@@ -28,8 +36,9 @@ public class JavaFundamentals01 {
             }
             else if (choice.equals("exit")) {
                 break;
+            } else {
+                System.out.println("Введите число от 1 до 5");
             }
-            else System.out.println("Введите число от 1 до 5");
         }
     }
 
@@ -41,8 +50,9 @@ public class JavaFundamentals01 {
         int sum = a+b+c;
         if (sum >= 0){
             System.out.println("Сумма положительная");
+        } else {
+            System.out.println("Сумма отрицательная");
         }
-        else System.out.println("Сумма отрицательная");
     }
 
     public static void selectColor(){
@@ -52,8 +62,9 @@ public class JavaFundamentals01 {
         }
         else if (data <= 20){
             System.out.println("Желтый");
+        } else {
+            System.out.println("Зеленый");
         }
-        else System.out.println("Зеленый");
     }
 
     public static void compareNumbers(){
@@ -61,13 +72,15 @@ public class JavaFundamentals01 {
         int b = 9;
         if (a >= b){
             System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
         }
-        else System.out.println("a < b");
     }
     public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment){
         if (increment){
             System.out.println(initValue + delta);
+        } else {
+            System.out.println(initValue - delta);
         }
-        else System.out.println(initValue - delta);
     }
 }
