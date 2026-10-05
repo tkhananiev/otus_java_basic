@@ -4,12 +4,18 @@ import java.util.Arrays;
 
 public class JavaFundamentals02 {
     public static void main(String[] args) {
-        //printString(4, "blah");
-        //sumArray(new int[] { 1, 2, 3 }, new int[]{ 2, 2 },  new int[]{ 1, 1, 1, 1, 1 });
-        //boolean a =  arrayEquinoxPoint(new int[]{ 1, 1, 1, 1, 1, 5 });
-        //System.out.println(hasBalancePoint(new int[]{1, 1, 1, 1, 1, 6}));
-        //revertArray(new int[] { 1, 2, 3, 4});
-        isSorted(new int[] {5, 1, 4, 2, 8});
+        printString(4, "blah"); //1
+        sumArrayElements(new int[]{1, 8, 3, 4, 5, 9, 67}); //2
+        fillArray(7, new int[]{});  //3
+        incrementArrayElements(8, new int[]{7, 5, 4, 2, 0, 9}); //4
+        compareArrayHalves(new int[]{11, 7, 4, 4, 9, 3, 6}); //5
+
+        //Bonus tasks
+        sumArrays(new int[] { 1, 2, 3 }, new int[]{ 2, 2 },  new int[]{ 1, 1, 1, 1, 1 }); //1
+        System.out.println(hasBalancePoint(new int[]{ 1, 1, 1, 1, 1, 5})); //2
+        sortArray(new int[] {5, 1, 4, 2, 8}); //3
+        revertArray(new int[] { 1, 2, 3, 4}); //4
+
     }
 
     //1. Реализуйте метод, принимающий в качестве аргументов целое число и строку, и печатающий в консоль строку указанное количество раз.
@@ -65,7 +71,7 @@ public class JavaFundamentals02 {
 
     //Задание со звёздочкой:
     //1. Реализуйте метод, принимающий на вход набор целочисленных массивов, и получающий новый массив, равный сумме входящих.
-    public static void sumArray(int[]... arrs) {
+    public static void sumArrays(int[]... arrs) {
         int maxLength = 0;
         for (int[] arr : arrs) {
             maxLength = Math.max(maxLength, arr.length);
@@ -100,7 +106,7 @@ public class JavaFundamentals02 {
         return false;
     }
     //3. Реализуйте метод, проверяющий, что все элементы массива идут в порядке убывания или возрастания (по выбору пользователя).
-    public static void isSorted(int[] arr) {
+    public static void sortArray(int[] arr) {
         boolean swapped = true;
         while (swapped) {
             swapped = false;
