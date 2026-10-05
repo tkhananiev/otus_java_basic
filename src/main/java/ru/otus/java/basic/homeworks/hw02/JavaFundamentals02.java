@@ -6,15 +6,15 @@ public class JavaFundamentals02 {
     public static void main(String[] args) {
         printString(4, "blah"); //1
         sumArrayElements(new int[]{1, 8, 3, 4, 5, 9, 67}); //2
-        fillArray(7, new int[]{});  //3
+        fillArray(7, new int[]{0, 0, 0, 0});  //3
         incrementArrayElements(8, new int[]{7, 5, 4, 2, 0, 9}); //4
         compareArrayHalves(new int[]{11, 7, 4, 4, 9, 3, 6}); //5
 
         //Bonus tasks
-        sumArrays(new int[] { 1, 2, 3 }, new int[]{ 2, 2 },  new int[]{ 1, 1, 1, 1, 1 }); //1
-        System.out.println(hasBalancePoint(new int[]{ 1, 1, 1, 1, 1, 5})); //2
-        sortArray(new int[] {5, 1, 4, 2, 8}); //3
-        revertArray(new int[] { 1, 2, 3, 4}); //4
+        sumArrays(new int[]{1, 2, 3}, new int[]{2, 2}, new int[]{1, 1, 1, 1, 1}); //1
+        System.out.println(hasBalancePoint(new int[]{1, 1, 1, 1, 1, 5})); //2
+        sortArray(new int[]{5, 1, 4, 2, 8}); //3
+        reverseArray(new int[]{1, 2, 3, 4}); //4
 
     }
 
@@ -41,6 +41,7 @@ public class JavaFundamentals02 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = n;
         }
+        System.out.println(Arrays.toString(arr));
     }
 
     //4. Реализуйте метод, принимающий в качестве аргументов целое число и ссылку на целочисленный массив, увеличивающий каждый элемент массива на указанное число.
@@ -48,16 +49,18 @@ public class JavaFundamentals02 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = arr[i] + n;
         }
+        System.out.println(Arrays.toString(arr));
     }
 
     //5. Реализуйте метод, принимающий в качестве аргумента целочисленный массив, и печатающий в консоль информацию о том, сумма элементов какой из половин массива больше.
     public static void compareArrayHalves(int[] arr) {
         int rightSum = 0;
         int leftSum = 0;
-        for (int i = 0; i < arr.length / 2; i++) {
+        int half = arr.length / 2;
+        for (int i = 0; i < half; i++) {
             leftSum += arr[i];
         }
-        for (int i = arr.length / 2; i <= arr.length / 2; i++) {
+        for (int i = half; i < arr.length; i++) {
             rightSum += arr[i];
         }
         if (leftSum > rightSum) {
@@ -105,6 +108,7 @@ public class JavaFundamentals02 {
         }
         return false;
     }
+
     //3. Реализуйте метод, проверяющий, что все элементы массива идут в порядке убывания или возрастания (по выбору пользователя).
     public static void sortArray(int[] arr) {
         boolean swapped = true;
@@ -123,8 +127,8 @@ public class JavaFundamentals02 {
     }
 
     // 4. Реализуйте метод, “переворачивающий” входящий массив. Пример: `{ 1 2 3 4 } => { 4 3 2 1 }`
-    public static void revertArray(int[] arr) {
-        int[]  resultArray = new int[arr.length];
+    public static void reverseArray(int[] arr) {
+        int[] resultArray = new int[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
             resultArray[i] = arr[arr.length - i - 1];
         }
