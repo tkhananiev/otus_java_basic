@@ -111,7 +111,7 @@ public class JavaFundamentals02 {
     }
 
     //3. Реализуйте метод, проверяющий, что все элементы массива идут в порядке убывания или возрастания (по выбору пользователя).
-    public static boolean isSorted(int[] arr){
+    public static boolean isSorted(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i - 1] > arr[i]) {
                 return false;
@@ -119,6 +119,7 @@ public class JavaFundamentals02 {
         }
         return true;
     }
+
     // 4. Реализуйте метод, “переворачивающий” входящий массив. Пример: `{ 1 2 3 4 } => { 4 3 2 1 }`
     public static void reverseArray(int[] arr) {
         int[] resultArray = new int[arr.length];
