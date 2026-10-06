@@ -13,7 +13,7 @@ public class JavaFundamentals02 {
         //Bonus tasks
         sumArrays(new int[]{1, 2, 3}, new int[]{2, 2}, new int[]{1, 1, 1, 1, 1}); //1
         System.out.println(hasBalancePoint(new int[]{1, 1, 1, 1, 1, 5})); //2
-        sortArray(new int[]{5, 1, 4, 2, 8}); //3
+        System.out.println(isSorted(new int[]{5, 1, 4, 2, 8})); //3
         reverseArray(new int[]{1, 2, 3, 4}); //4
 
     }
@@ -110,22 +110,14 @@ public class JavaFundamentals02 {
     }
 
     //3. Реализуйте метод, проверяющий, что все элементы массива идут в порядке убывания или возрастания (по выбору пользователя).
-    public static void sortArray(int[] arr) {
-        boolean swapped = true;
-        while (swapped) {
-            swapped = false;
-            for (int i = 0; i < arr.length - 1; i++) {
-                if (arr[i] > arr[i + 1]) {
-                    int swap = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = swap;
-                    swapped = true;
-                }
+    public static boolean isSorted(int[] arr){
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1] > arr[i]) {
+                return false;
             }
         }
-        System.out.println(Arrays.toString(arr));
+        return true;
     }
-
     // 4. Реализуйте метод, “переворачивающий” входящий массив. Пример: `{ 1 2 3 4 } => { 4 3 2 1 }`
     public static void reverseArray(int[] arr) {
         int[] resultArray = new int[arr.length];
