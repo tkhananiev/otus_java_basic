@@ -7,10 +7,10 @@ public class JavaFundamentals03 {
         int[][] matrix = {{3, 1, 4, 7}, {5, 9, 2, 6}, {7, 8, 1, 5}, {4, 2, 3, 8}};
         System.out.println(sumOfPositiveElements(new int[]{5, 1, 4, 2, 8}));
         printSquare(4);
-        matrixDiagonal(matrix);
+        zeroMatrixDiagonal(matrix);
         System.out.println(Arrays.deepToString(matrix));
         System.out.println(findMax(matrix));
-        System.out.println(sumOfSecondRaw(matrix));
+        System.out.println(sumOfSecondRow(matrix));
     }
 
     public static int sumOfPositiveElements(int[] array) {
@@ -32,13 +32,10 @@ public class JavaFundamentals03 {
         }
     }
 
-    public static void matrixDiagonal(int[][] array) {
+    public static void zeroMatrixDiagonal(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (i == j){
-                    array[i][j] = 0;
-                }
-                if (j == array[i].length - i - 1){
+                if (i == j || j == array[i].length - i - 1){
                     array[i][j] = 0;
                 }
             }
@@ -57,7 +54,7 @@ public class JavaFundamentals03 {
         return max;
     }
 
-    public static int sumOfSecondRaw(int[][] array) {
+    public static int sumOfSecondRow(int[][] array) {
         int sum = 0;
         if (array.length < 2) {
             return -1;
