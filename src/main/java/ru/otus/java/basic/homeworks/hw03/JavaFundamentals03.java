@@ -1,9 +1,16 @@
 package ru.otus.java.basic.homeworks.hw03;
 
+import java.util.Arrays;
+
 public class JavaFundamentals03 {
     public static void main(String[] args) {
+        int[][] matrix = {{3, 1, 4, 7}, {5, 9, 2, 6}, {7, 8, 1, 5}, {4, 2, 3, 8}};
+        System.out.println(sumOfPositiveElements(new int[]{5, 1, 4, 2, 8}));
         printSquare(4);
-        
+        matrixDiagonal(matrix);
+        System.out.println(Arrays.deepToString(matrix));
+        System.out.println(findMax(matrix));
+        System.out.println(sumOfSecondRaw(matrix));
     }
 
     public static int sumOfPositiveElements(int[] array) {
@@ -52,12 +59,12 @@ public class JavaFundamentals03 {
 
     public static int sumOfSecondRaw(int[][] array) {
         int sum = 0;
-        if (array.length >= 2) {
-            for (int i = 0; i < array[1].length; i++) {
-                sum += array[1][i];
-            }
-            return sum;
+        if (array.length < 2) {
+            return -1;
         }
-        return -1;
+        for (int i = 0; i < array[1].length; i++) {
+            sum += array[1][i];
+        }
+        return sum;
     }
 }
