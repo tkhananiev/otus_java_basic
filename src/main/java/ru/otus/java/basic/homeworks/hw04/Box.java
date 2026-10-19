@@ -40,12 +40,12 @@ public class Box {
     }
 
     public boolean putItem(String item) {
-        if (this.item != null) {
-            System.out.println("The box is not empty. The following item is in the box: " + this.item + "\n");
-            return  false;
-        }
         if (!isOpened) {
             System.out.println("The box is closed.\n");
+            return false;
+        }
+        if (this.item != null) {
+            System.out.println("The box is not empty. The following item is in the box: " + this.item + "\n");
             return false;
         }
         this.item = item;
@@ -53,16 +53,19 @@ public class Box {
         return true;
     }
 
-    public void getItem() {
-        if (item == null){
-            System.out.println("The box is empty.");
-            return;
-        }
-        if (!isOpened){
+    public String takeItem() {
+        String taken = item;
+        if (!isOpened) {
             System.out.println("The box is closed.");
-            return;
+            return null;
         }
-        System.out.println("We have taken the following item out of the box: " + item + "\n");
+        if (item == null) {
+            System.out.println("The box is empty.");
+            return null;
+        }
         item = null;
+        System.out.println("We have taken the following item out of the box: " + taken + "\n");
+
+        return taken;
     }
 }

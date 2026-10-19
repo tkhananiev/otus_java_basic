@@ -29,10 +29,8 @@ public class Main {
         System.out.println(box.getColor());
         box.putItem("key");
         box.printInfo();
-        box.getItem();
+        System.out.println(box.takeItem());
         box.printInfo();
         box.close();
-
-
     }
 }
