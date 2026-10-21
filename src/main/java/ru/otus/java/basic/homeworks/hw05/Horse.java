@@ -6,7 +6,7 @@ public class Horse extends Animal {
     }
 
     @Override
-    public int swimRatePerM() {
+    protected int swimRatePerM() {
         return 4;
     }
 }

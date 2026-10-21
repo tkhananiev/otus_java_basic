@@ -6,7 +6,7 @@ public class Dog extends Animal {
     }
 
     @Override
-    public int swimRatePerM() {
+    protected int swimRatePerM() {
         return 2;
     }
 }

@@ -26,7 +26,7 @@ public abstract class Animal {
         return 1;
     }
 
-    public int swimRatePerM() {
+    protected int swimRatePerM() {
         return 0;
     }
 
