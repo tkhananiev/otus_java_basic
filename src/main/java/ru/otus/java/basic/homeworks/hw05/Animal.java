@@ -6,7 +6,7 @@ public abstract class Animal {
     private int swimSpeed;
     private int endurance;
     private boolean canSwim;
-    public boolean tired;
+    private boolean tired;
 
     protected Animal(String name, int runSpeed, int swimSpeed, int endurance) {
         this.name = name;
