@@ -37,7 +37,9 @@ public abstract class Animal {
         return 1;
     }
 
-    public abstract int swimRatePerM();
+    public int swimRatePerM(){
+        return 0;
+    }
 
     public double run(int distance) {
         int rate = distance * runRatePerM();
@@ -73,7 +75,7 @@ public abstract class Animal {
 
     public void info() {
         System.out.println("Имя: " + this.name +
-                "\nСкорось бега: " + this.runSpeed +
+                "\nСкорость бега: " + this.runSpeed +
                 "\nСкорость плавания:  " + this.swimSpeed +
                 "\nВыносливость:  " + this.endurance +
                 "\nУсталость: " + this.tired);
