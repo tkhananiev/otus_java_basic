@@ -39,7 +39,7 @@ public abstract class Animal {
             return -1;
         }
         endurance -= rate;
-        System.out.println(name + " пробежал " + distance + " метров за " + time);
+        System.out.printf("%s пробежал %d метров за %.2f\n", name, distance, time);
         return time;
 
     }
@@ -54,7 +54,7 @@ public abstract class Animal {
                 return -1;
             }
             endurance -= rate;
-            System.out.println(name + " проплыл " + distance + " метров за " + time);
+            System.out.printf("%s проплыл %d метров за %.2f\n", name, distance, time);
             return time;
         } else {
             System.out.println(getName() + " плавать не умеет.");
@@ -63,11 +63,8 @@ public abstract class Animal {
     }
 
     public void info() {
-        System.out.println("Имя: " + this.name +
-                "\nСкорость бега: " + this.runSpeed +
-                "\nСкорость плавания:  " + this.swimSpeed +
-                "\nВыносливость:  " + this.endurance +
-                "\nУсталость: " + this.tired);
+        System.out.printf("Имя: %s\nСкорость бега: %d\nСкорость плавания: %d\nВыносливость: %d\nУсталость: %b\n",
+                this.name, this.runSpeed, this.swimSpeed, this.endurance, this.tired);
     }
 
     public String getName() {
