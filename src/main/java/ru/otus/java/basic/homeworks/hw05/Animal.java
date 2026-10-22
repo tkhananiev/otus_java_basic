@@ -27,7 +27,7 @@ public abstract class Animal {
     }
 
     protected int swimRatePerM() {
-        return 0;
+        return 1;
     }
 
     public double run(int distance) {
@@ -39,7 +39,7 @@ public abstract class Animal {
             return -1;
         }
         endurance -= rate;
-        System.out.printf("%s пробежал %d метров за %.2f\n", name, distance, time);
+        System.out.printf("%s пробежал %d метров за %.1f секунды\n", name, distance, time);
         return time;
 
     }
@@ -54,7 +54,7 @@ public abstract class Animal {
                 return -1;
             }
             endurance -= rate;
-            System.out.printf("%s проплыл %d метров за %.2f\n", name, distance, time);
+            System.out.printf("%s проплыл %d метров за %.1f секунды\n", name, distance, time);
             return time;
         } else {
             System.out.println(getName() + " плавать не умеет.");

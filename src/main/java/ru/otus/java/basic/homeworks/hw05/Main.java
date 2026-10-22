@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Animal[] animals = {
                 new Cat("Murzik", 10, 50),
-                new Dog("Bobik", 12, 4, 60),
+                new Dog("Bobik", 3, 4, 60),
                 new Horse("Buyan", 15, 3, 120)
         };
         for (Animal animal : animals) {
