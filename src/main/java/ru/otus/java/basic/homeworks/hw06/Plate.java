@@ -1,23 +1,17 @@
 package ru.otus.java.basic.homeworks.hw06;
 
 public class Plate {
-    private final int plateCapacity;
-    private final int maxFood;
+    private final int capacity;
     private int currentFood;
 
 
-    public Plate(int plateCapacity) {
-        this.plateCapacity = plateCapacity;
-        this.maxFood = plateCapacity;
-        this.currentFood = maxFood;
+    public Plate(int capacity) {
+        this.capacity = capacity;
+        this.currentFood = capacity;
     }
 
-    public int getPlateCapacity() {
-        return plateCapacity;
-    }
-
-    public int getMaxFood() {
-        return maxFood;
+    public int getCapacity() {
+        return capacity;
     }
 
     public int getCurrentFood() {
@@ -25,8 +19,8 @@ public class Plate {
     }
 
     public void increaseFood(int foodAmount) {
-        if (currentFood + foodAmount > maxFood) {
-            currentFood = maxFood;
+        if (currentFood + foodAmount > capacity) {
+            currentFood = capacity;
         } else {
             currentFood += foodAmount;
         }
