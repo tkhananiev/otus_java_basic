@@ -47,6 +47,10 @@ public class Horse implements Movable {
 
     @Override
     public boolean move(double distance, Terrain terrain) {
+        if (distance <= 0) {
+            System.out.println("Дистанция не может быть отрицательной или нулевой.");
+            return false;
+        }
         if (canCrossTerrain(terrain) && hasEnoughPower(distance)) {
             System.out.println("Поскакали!");
             decreasePower();

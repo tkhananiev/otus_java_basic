@@ -5,7 +5,7 @@ public class Main {
         Human human = new Human("Tim", 100, 10, 5);
         Car car = new Car(20, 10);
         Horse horse = new Horse(40, 10);
-        Bicycle bicycle = new Bicycle(human);
+        Bicycle bicycle = new Bicycle();
         AllTerrainVehicle atv = new AllTerrainVehicle(30, 10);
 
         System.out.println("----- Walk -----");

@@ -68,19 +68,34 @@ public class Human {
         if (this.currentTransport != null) {
             System.out.println("Сначала сойди с того, на чем сидишь...");
         } else {
+            if (transport instanceof Bicycle) {
+                if (((Bicycle) transport).getRider() != null) {
+                    System.out.println("Велосипед занят.");
+                    return;
+                } else {
+                    ((Bicycle) transport).setRider(this);
+                }
+            }
             this.currentTransport = transport;
-            System.out.println("Поедем на " + transport);
+            System.out.println("Поедем на " + transport.getClass().getSimpleName());
         }
     }
 
     public void getOffTransport() {
         if (this.currentTransport != null) {
+            if (this.currentTransport instanceof Bicycle) {
+                ((Bicycle) this.currentTransport).clearRider();
+            }
             this.currentTransport = null;
         }
         System.out.println("Теперь пешком.");
     }
 
     public boolean move(double distance, Terrain terrain) {
+        if (distance <= 0) {
+            System.out.println("Дистанция не может быть отрицательной или нулевой.");
+            return false;
+        }
         if (this.currentTransport == null) {
             if (!hasEnoughFootPower(distance)) {
                 return false;

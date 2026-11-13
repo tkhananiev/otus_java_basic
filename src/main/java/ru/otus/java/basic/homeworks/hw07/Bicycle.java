@@ -4,15 +4,11 @@ import java.util.Objects;
 
 public class Bicycle implements Movable {
 
-    Human human;
-
-    public Bicycle(Human human) {
-        this.human = human;
-    }
+    Human rider;
 
     boolean hasEnoughHumanPower(double distance) {
-        double requiredPower = distance * human.getBicyclePowerConsumption() / 100;
-        if (requiredPower > human.getPower()) {
+        double requiredPower = distance * rider.getBicyclePowerConsumption() / 100;
+        if (requiredPower > rider.getPower()) {
             System.out.println("Не хватит на такую дорогу...");
             return false;
         } else {
@@ -34,16 +30,27 @@ public class Bicycle implements Movable {
         }
     }
 
-    public double decreaseHumanPower(Human human, double distance) {
-        return human.decreasePower(distance);
+    public void setRider(Human rider) {
+        this.rider = rider;
+    }
 
+    public void clearRider() {
+        rider = null;
+    }
+
+    public Human getRider() {
+        return rider;
     }
 
     @Override
     public boolean move(double distance, Terrain terrain) {
+        if (distance <= 0) {
+            System.out.println("Дистанция не может быть отрицательной или нулевой.");
+            return false;
+        }
         if (canCrossTerrain(terrain) && hasEnoughHumanPower(distance)) {
             System.out.println("Крути педали!");
-            human.decreasePower(distance);
+            rider.decreasePower(distance);
             return true;
         }
         return false;
