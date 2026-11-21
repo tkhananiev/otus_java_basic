@@ -7,7 +7,7 @@ public class Main {
         String[][] arr = new String[][]{{"1", "5", "4", "gf"}, {"9", "3", "54", "6"}, {"7", "5", "8", "3"}, {"40", "8", "1", "9"}};
         try {
             sumArrValues(arr);
-        } catch (AppArraySizeException | AppArrayDataException ex){
+        } catch (AppArraySizeException | AppArrayDataException ex) {
             System.out.println(ex.fillInStackTrace());
         }
 
@@ -15,11 +15,11 @@ public class Main {
 
     }
 
-    public static void sumArrValues(String[][] arr) throws AppArraySizeException, AppArrayDataException{
+    public static void sumArrValues(String[][] arr) throws AppArraySizeException, AppArrayDataException {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                if (arr.length != 4 || arr[i].length != 4){
+                if (arr.length != 4 || arr[i].length != 4) {
                     throw new AppArraySizeException();
                 }
                 try {
