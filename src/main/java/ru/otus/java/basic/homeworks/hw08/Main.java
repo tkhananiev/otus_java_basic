@@ -16,12 +16,17 @@ public class Main {
     }
 
     public static void sumArrValues(String[][] arr) throws AppArraySizeException, AppArrayDataException {
+        if  (arr.length != 4) {
+            throw new AppArraySizeException();
+        }
+        for (String[] strings : arr) {
+            if (strings.length != 4) {
+                throw new AppArraySizeException();
+            }
+        }
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                if (arr.length != 4 || arr[i].length != 4) {
-                    throw new AppArraySizeException();
-                }
                 try {
                     sum += Integer.parseInt(arr[i][j]);
                 } catch (NumberFormatException e) {
